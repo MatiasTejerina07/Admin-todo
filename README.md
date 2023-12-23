@@ -1,5 +1,8 @@
-# Development
-    Pasos para levantar la app en desarrollo
+# Admin TODO
+> Admin todo es un aplicación realizada en NextJS, Prisma, PostgreSQL, utlizando el REST FULL API'S de Next, y aplicando Prisma como ORM, DockerCompose y TablePLUS.
+
+## Development
+ Pasos para levantar la app en desarrollo
 
 
 1. Levantar la base de datos
@@ -8,8 +11,9 @@
 ```
 2. Renombrar el .env
 3. Reemplazar las variables de entorno
+4. Ejecutar el seed para [crear la base de datos local](localhost:3000/api/seed)
 
-# Prisma commnads
+## Prisma commnads
 ``````
 npx prisma init
 npx prisma migrate dev
