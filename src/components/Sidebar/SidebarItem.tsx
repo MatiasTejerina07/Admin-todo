@@ -8,7 +8,6 @@ import { usePathname } from 'next/navigation';
 
 export default function SidebarItem() {
     const pathName = usePathname();
-    console.log(pathName)
 
     return (
         <ul className="space-y-2 tracking-wide mt-8">
