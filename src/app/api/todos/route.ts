@@ -10,11 +10,19 @@ export async function GET(request: Request) {
     return NextResponse.json({
         message:'Take tiene que ser un número'
     },{status:400})
+   } 
+
+
+   if(isNaN(+skip)){
+    return NextResponse.json({
+        message:'Skip tiene que ser un número'
+    },{status:400})
    }
 
 
     const todos = await prisma.todo.findMany({
-       take:+take
+       take:+take,
+       skip:+skip
     })
   return NextResponse.json({
     todos: todos
