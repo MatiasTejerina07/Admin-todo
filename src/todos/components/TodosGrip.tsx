@@ -16,6 +16,7 @@ export const TodosGrip = ({ todos = [] }: Props) => {
 
     const toggleTodo = async (id: string, complete: boolean): Promise<any> => {
         const updateTodo = await handlersTodos.updateTodo(id, complete)
+        console.log(updateTodo);
         router.refresh();
     }
 
