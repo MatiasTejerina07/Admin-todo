@@ -25,7 +25,15 @@ export default function SidebarItem() {
                 <Link href={'/dashboard/rest-todos'} className={pathName === '/dashboard/rest-todos' ? style['active-link'] : style['disable-link']}>
                     <CiBookmarkCheck size={30} />
                     <span className="group-hover:text-gray-700">
-                        Categories
+                        Rest Todos
+                    </span>
+                </Link>
+            </li>
+            <li>
+                <Link href={'/dashboard/server-action'} className={pathName === '/dashboard/server-action' ? style['active-link'] : style['disable-link']}>
+                    <CiBookmarkCheck size={30} />
+                    <span className="group-hover:text-gray-700">
+                        Server Actions
                     </span>
                 </Link>
             </li>
