@@ -1,23 +1,29 @@
-import React from 'react'
-import { CiBookmarkCheck } from 'react-icons/ci'
-import style from "./SidebarActive.module.css"
+'use client'
+import React from 'react';
+import { CiBookmarkCheck } from 'react-icons/ci';
+import style from "./SidebarActive.module.css";
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 
 export default function SidebarItem() {
+    const pathName = usePathname();
+    console.log(pathName)
+
     return (
         <ul className="space-y-2 tracking-wide mt-8">
-            {/* Active className: text-white bg-gradient-to-r from-sky-600 to-cyan-400 */}
+
             <li>
-                <a href="#" className="relative px-4 py-3 flex items-center space-x-4 rounded-xl text-white bg-gradient-to-r from-sky-600 to-cyan-400">
+                <Link href={'/dashboard'} className={pathName === '/dashboard' ? style['active-link'] : style['disable-link']}>
                     <CiBookmarkCheck size={30} />
                     <span className="-mr-1 font-medium">Dashboard</span>
-                </a>
+                </Link>
             </li>
             <li>
-                <a href="#" className="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group">
+                <Link href={'/dashboard/rest-todos'} className={pathName === '/dashboard/rest-todos' ? style['active-link'] : style['disable-link']}>
                     <CiBookmarkCheck size={30} />
                     <span className="group-hover:text-gray-700">Categories</span>
-                </a>
+                </Link>
             </li>
         </ul>
     )

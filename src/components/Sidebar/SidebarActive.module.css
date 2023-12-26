@@ -1,3 +1,7 @@
 .active-link{
-    @aplly "text-white bg-gradient-to-r from-sky-600 to-cyan-400"
+    @apply relative px-4 py-3 flex items-center space-x-4 rounded-xl text-white bg-gradient-to-r from-sky-600 to-cyan-400
+}
+
+.disable-link{
+    @apply text-gray-700 relative px-4 py-3 flex items-center space-x-4 rounded-xl
 }
