@@ -25,3 +25,26 @@ export async function GET(request: Request, {params}:Arguments) {
     response:response
   })
 }
+
+
+
+
+export async function PUT(request: Request, {params}:Arguments) { 
+try {
+    const {id} = params;
+    const {complete, description} = await request.json();
+    const updateTodo = await prisma.todo.update({
+        where:{
+            id
+        },
+        data:{
+            complete,
+            description
+        }
+    })
+
+    return NextResponse.json(updateTodo)
+} catch (error) {
+    
+}
+}
